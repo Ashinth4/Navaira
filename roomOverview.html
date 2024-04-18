@@ -1,0 +1,1201 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        *,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+@font-face {
+    font-family: "Herr Von Muellerhoff";
+    src: url("textfont/HerrVonMuellerhoff-Regular.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "Josefin Sans Regular";
+    src: url("textfont/JosefinSans-Regular.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "Josefin Sans Light";
+    src: url("textfont/JosefinSans-Light.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "SourceSansPro Regular";
+    src: url("textfont/SourceSansPro-Regular.ttf") format("truetype");
+}
+
+:root {
+    --main-font-1: "Josefin Sans Regular", sans-serif;
+    --main-font-2: "Josefin Sans Light", sans-serif;
+    --secondary-font: "SourceSansPro Regular", sans-serif;
+    --main-color: #455d58;
+    --white-pinkish-color : #FAF2F7;
+    --white-color: #fff;
+}
+
+
+
+/* Main styling */
+
+
+
+/* BASIC STYLES */
+
+html {
+    color: var(--white-color);
+    
+    font-family: var(--main-font-1);
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--white-pinkish-color);
+    
+}
+
+main img {
+    width: 100%;
+}
+
+section {
+    padding: 8rem 0;
+}
+
+a {
+    text-decoration: none;
+}
+
+p {
+    font-size: 1.2rem;
+    font-family: var(--main-font-2);
+    line-height: 1.5;
+    font-weight: 200;
+}
+
+ul {
+    list-style: none;
+}
+
+h2 {
+    font-size: 2rem;
+    margin: 2rem 0;
+    line-height: 1.3;
+}
+
+h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1.2rem;
+}
+
+h4 {
+    font-size: 1.3rem;
+    font-weight: 700;
+    margin-bottom: 1.6rem;
+}
+
+h2, h4 {
+    text-transform: uppercase;
+    letter-spacing: .2rem;
+}
+
+/* BASIC & REUSABLE CLASSES */
+
+.heading-text {
+    text-align: center;
+    position: relative;
+}
+
+.heading-text::after {
+    content: '';
+    display: block;
+    width: 10rem;
+    height: .2rem;
+    background-color: var(--main-color);
+    margin: 0 auto;
+    margin-top: 3rem;
+}
+
+.text-green {
+    color: var(--main-color);
+}
+
+.text-white {
+    color: var(--white-color);
+}
+
+.container {
+    width: 100%;
+    max-width: 120rem;
+    padding: 0 2.4rem;
+    margin: 0 auto;
+}
+
+.container-medium {
+    max-width: 110rem;
+}
+
+.row {
+    display: flex;
+    align-items: center;
+}
+
+.col-2 {
+    margin-bottom: 5rem;
+    flex-basis: 50%;
+    min-width: 30rem;
+}
+
+.col-3 {
+    flex-basis: 30%;
+    min-width: 25rem;
+    margin-bottom: 5rem;
+}
+
+.padding-right {
+    padding-right: 8rem;
+}
+
+.text-box {
+    width: 100%;
+    max-width: 40rem;
+}
+
+.text-box p {
+    margin: 4rem 0;
+}
+
+/* BUTTONS */
+
+.btn {
+    display: inline-block;
+    background: transparent;
+    border: .1rem solid var(--white-color);
+    border-radius: .2rem;
+    cursor: pointer;
+    outline: none;
+    padding: 2rem 4rem;
+    text-transform: uppercase;
+    font-family: inherit;
+    font-size: 1.2rem;
+    font-weight: 400;
+    letter-spacing: .2rem;
+    overflow: hidden;
+    position: relative;
+}
+
+.btn-green {
+    color: var(--white-color);
+    transition: color .5s;
+    z-index: 100;
+}
+
+.btn-white {
+    border: 1px solid var(--main-color);
+    color: var(--main-color);
+    transition: color .5s;
+    z-index: 100;
+}
+
+.btn-green::before,
+.btn-white::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -10%;
+    width: 0;
+    height: 100%;
+    transform: skewX(25deg);
+    z-index: -1;
+    transition: width .7s;
+}
+
+.btn-green::before {
+    background-color: var(--white-color);
+}
+
+.btn-white::before {
+    background-color: var(--main-color);
+}
+
+.btn-green:hover{
+    color: var(--main-color);
+}
+
+.btn-white:hover {
+    color: var(--white-color);
+}
+
+.btn-green:hover::before,
+.btn-white:hover::before {
+    width: 120%;
+}
+
+/* HEADER */
+
+header {
+    height: 100vh;
+   color: #fff;
+   position: relative;
+   padding-top: 0;
+}
+
+
+
+label {
+    display: none;
+}
+
+label #open,
+label #close {
+    color: var(--main-color);
+    font-size: 2.2rem;
+    line-height: 8rem;
+    cursor: pointer;
+    display: none;
+}
+
+label #close {
+    color: var(--white-pinkish-color);
+}
+
+#check {
+    display: none;
+}
+
+.book-btn {
+    border: .2rem solid transparent;
+    background-color: var(--main-color);
+    color: var(--white-pinkish-color);
+    padding: 1.5rem 3rem;
+    transition: all .3s ease;
+}
+
+.book-btn:hover {
+    background-color: transparent;
+    border: .2rem solid var(--main-color);
+    color: var(--main-color);
+}
+
+.book-btn:hover::before {
+    transform: scaleX(0);
+}
+
+.hero {
+    background-image: linear-gradient(to right bottom, rgba(55, 189, 173, 0.737), rgba(48, 73, 68, 0)), url("https://th.bing.com/th/id/R.d3c2984b538125476b002d47baed44dc?rik=iiayGnUJBKgWvA&riu=http%3a%2f%2fdata.1freewallpapers.com%2fdownload%2fthe-oberoi-udaivilas-in-udaipur.jpg&ehk=SMEi1exajVL1RO4r%2bL8G682%2bjVK%2f0bnB8DbDeWynpWc%3d&risl=&pid=ImgRaw&r=0");
+    background-size: cover;
+    background-position: center;
+    height: calc(100vh - 7.5rem);
+    clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+    position: relative;
+}
+
+.hero__text-box {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.hero__text {
+    text-transform: uppercase;
+    color: var(--white-color);
+    font-size: 5.4rem;
+    letter-spacing: .2rem;
+    line-height: 1.4;
+    margin-bottom: 5rem;
+}
+
+.hero__text span {
+    display: block;
+}
+
+/* INFO SECTION */
+
+.info-text {
+    margin-bottom: 3rem;
+    font-family: var(--main-font-2);
+}
+
+.image-group img {
+    width: 100%;
+}
+
+.image-group {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 1.5rem;
+}
+
+/* ROOMS SECTION */
+
+.rooms {
+    background-color: var(--main-color);
+}
+
+/* RESTAURANT SECTION */
+
+.restaurant {
+    color: var(--main-color);
+}
+
+/* SPA SECTION */
+
+.spa {
+    background-color: var(--main-color);
+}
+
+/* TESTIMONIALS SECTION */
+
+.testimonials {
+    color: var(--main-color);
+    padding: 5rem 0;
+}
+
+.fas.fa-quote-left {
+    font-size: 3.4rem;
+}
+
+.slider-box {
+    text-align: center;
+    padding: 4rem 2rem;
+}
+
+.slider-box img {
+    width: 5rem;
+    margin-top: 2rem;
+    border-radius: 50%;
+    margin: 0 auto;
+}
+
+.slider-box p {
+    margin: 3rem 0;
+}
+
+.slider-box h3 {
+    margin: 1.5rem 0;
+    font-size: 1.8rem;
+}
+
+.slider {
+    max-width: 60rem;
+    margin: 0 auto;
+}
+
+.rating {
+    margin: 3rem 0;
+}
+
+.fa-star {
+    color: #ffba00;
+}
+
+/* FOOTER SECTION */
+
+footer {
+    background-color: var(--main-color);
+    font-family: var(--main-font-2);
+    padding: 7rem 0 4rem;
+    position: relative;
+}
+
+.back-to-top {
+    text-align: center;
+    background-color: var(--main-color);
+    border-radius: 50%;
+    position: absolute;
+    top: -3rem;
+    left: 50%;
+    width: 7rem;
+    height: 7rem;
+    transform: translateX(-50%);
+}
+
+.back-to-top i {
+    display: block;
+    color: var(--white-color);
+    font-size: 2rem;
+    padding: 2rem;
+    animation-name: showsUp;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+}
+
+.footer__content {
+    align-items: flex-start;
+    justify-content: space-between;
+    padding: 1.5rem 0;
+}
+
+.social-icons,
+.payment-methods {
+    margin-top: 2.5rem;
+    display: flex;
+}
+
+.social-icons i,
+.payment-methods i {
+    font-size: 2.3rem;
+    color: var(--white-color);
+    padding: .8rem 1rem;
+}
+
+.footer__content a:hover {
+    opacity: .5;
+}
+
+/*                    ROOMS PAGE                   */
+
+.rooms-list {
+    color: var(--main-color);
+    padding: 0;
+    padding-bottom: 10rem;
+}
+
+.row-2 {
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin: 8rem auto 5rem;
+    flex-direction: row !important;
+}
+
+.rooms-list select {
+    padding: .6rem;
+    border: .1rem solid var(--main-color);
+    outline: none;
+    background: transparent;
+    font-family: var(--main-font-1);
+}
+
+.rooms-list img,
+.our-menu img {
+    width: 100%;
+}
+
+.rooms-list .col-2:not(:last-child) {
+    margin-right: 4rem;
+}
+
+.room-info {
+    text-align: center;
+    padding: 1rem;
+    background-color: var(--white-color);
+}
+
+.room-info div {
+    max-width: 40rem;
+    margin: 0 auto;
+    padding: 1.5rem;
+}
+
+.room-info h4 {
+    letter-spacing: 1px;
+    line-height: 1.4;
+}
+
+.room-info p {
+    line-height: 1.3;
+    font-family: var(--main-font-2);
+}
+
+.room-info a {
+    color: var(--main-color);
+    border-bottom: 1px solid var(--main-color);
+    font-size: 1.5rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding-bottom: .5rem;
+}
+
+.price {
+    font-size: 2rem;
+    margin: 1.5rem;
+}
+
+.price span {
+    font-size: 3.5rem;
+}
+
+/*                    RESTAURANT PAGE                   */
+
+.our-menu {
+    color: var(--main-color);
+    font-family: var(--main-font-2);
+    padding-bottom: 10rem;
+}
+
+.our-menu .row {
+    justify-content: space-between;
+}
+
+.menu-header,
+.spa-header {
+    text-align: center;
+    max-width: 57rem;
+    width: 100%;
+    margin: auto;
+    margin-bottom: 5rem;
+}
+
+.menu-header h2 {
+    font-family: var(--main-font-1);
+}
+
+.menu-table .col-2 {
+    padding: 2rem 2rem 0 2rem;
+}
+
+.menu-table .col-2 div {
+    margin-bottom: 4rem;
+}
+
+/*                    ABOUT PAGE                   */
+
+.excellent-service {
+    background: url("images/excellent-img.jpg") center no-repeat;
+    background-size: cover;
+    min-height: 65vh;
+}
+
+.excellent-service .container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.headlines {
+    padding-top: 5rem;
+}
+
+.sub-headline {
+    font-size: 8.5rem;
+    font-family: "Herr Von Muellerhoff", cursive;
+    color: #55917f;
+    font-weight: 100;
+    line-height: .4;
+    letter-spacing: 2px;
+    text-transform: capitalize;
+}
+
+.sub-headline::first-letter {
+    text-transform: uppercase;
+    font-size: 10.3rem;
+}
+
+.features .row {
+    justify-content: space-between;
+}
+
+.features {
+    background-color: var(--main-color);
+}
+
+.features i {
+    color: #ce8571;
+    font-size: 2.8rem;
+    margin-bottom: 1.5rem;
+}
+
+.features h4 {
+    text-transform: capitalize;
+    font-weight: 500;
+    font-size: 2rem;
+    letter-spacing: 0;
+}
+
+.features p {
+    font-family: var(--main-font-2);
+}
+
+.brands {
+    padding: 5rem 0;
+}
+
+.brands .slider-box img {
+    width: 20rem;
+    margin-top: 2rem;
+    border-radius: none;
+    margin: 0 auto;
+}
+
+/*                     CONTACT PAGE                   */
+
+.contact {
+    color: var(--main-color);
+}
+
+.contact h3 {
+    font-family: var(--main-font-2);
+}
+
+.contact .col-2:first-child {
+    margin-right: 8rem;
+}
+
+.contact .col-2 div {
+    margin-bottom: 3rem;
+}
+
+.contact input, textarea {
+    display: block;
+    width: 100%;
+    background: transparent;
+    border: 1px solid rgba(0,0,0,.18);
+    outline: none;
+    padding: 1.7rem 1.5rem;
+    font-family: var(--main-font-2);
+    font-size: 1.8rem;
+    margin-bottom: 3rem;
+    transition: all .5s;
+}
+
+textarea {
+    resize: none;
+    height: 20rem;
+}
+
+/*                    SPA PAGE                   */
+
+.spa-header {
+    color: var(--main-color);
+    margin-bottom: 8rem;
+}
+
+.spa-header .headline {
+    color: var(--main-color);
+}
+
+.section-spa .col-3 img {
+    width: 100%;
+    transform: scale(1.15);
+}
+
+.section-spa .col-3 {
+    flex: 1;
+    margin-bottom: 0;
+    overflow: hidden;
+}
+
+.section-spa .fa-spa,
+.our-menu .fa-utensils {
+    font-size: 4rem;
+}
+
+.button-container {
+    text-align: center;
+    padding: 10rem 0;
+}
+
+/* MEDIA QUERIES */
+
+@media screen and (max-width: 1000px) {
+    .nav-item:not(:last-child) {
+        margin-right: 2rem;
+    }
+}
+
+@media screen and (max-width: 900px) {
+    .navbar .logo {
+      order: 1;
+      padding: 0.938rem 0;
+      transform: none;
+   }
+   
+   .navbar nav {
+      order: 3;
+   }
+   
+   .navbar .social {
+      display: none;
+      order: 2;
+   }
+   
+   
+    p {
+        font-size: 1.7rem;
+    }
+
+    label {
+        display: block;
+    }
+
+    label #open {
+        display: block;
+    }
+
+  
+    #check:checked ~ .nav-list {
+        left: 0;
+    }
+
+    #check:checked ~ label #open {
+        display: none;
+    } 
+
+    #check:checked ~ label #close {
+        display: block;
+        position: relative;
+        z-index: 100000;
+    }
+
+
+
+    .book-btn {
+        border: .2rem solid transparent;
+        background-color: transparent;
+        transition: all .3s;
+    }
+    
+    .book-btn:hover {
+        border: .2rem solid var(--white-color);
+        color: var(--white-pinkish-color);
+        opacity: 1;
+    }
+
+    footer .row {
+        flex-direction: column;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    h2 {
+        font-size: 3.2rem;
+    }
+
+    .hero__text {
+        font-size: 4.8rem;
+    }
+
+    .row {
+        flex-direction: column;
+    }
+
+    .menu-table .col-2:first-child {
+        margin-bottom: 0;
+    }
+
+    .contact .row {
+        align-items: stretch;
+    }
+
+    .rooms-list .row {
+        flex-direction: row;
+    }
+
+    .col-2 {
+        padding-right: 0;
+    }
+
+    .text-box {
+        margin-right: auto;
+    }
+
+    .column-reverse {
+        flex-direction: column-reverse;
+    }
+
+    footer .col-4 {
+        margin-bottom: 3rem;
+    }
+
+    .footer__content-about h4 {
+        text-align: left;
+    }
+
+    .contact .col-2:first-child {
+        margin-right: 0;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .rooms-list .row {
+        flex-direction: column;
+    }
+
+    .rooms-list .col-2:not(:last-child) {
+        margin-right: 0;
+    }
+}
+
+/* ANIMATIONS */
+
+@keyframes showsUp {
+    0% {
+        opacity: 0;
+    }
+
+    50% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+        transform: translateY(-1rem);
+    }
+}
+
+
+
+.section_not_visible{
+   opacity: 0;
+   transform: translateY(50px);
+   transition: 1s ease;
+}
+.section_visible 
+{
+   opacity: 1 ;
+   transform: translateY(0px);
+}
+
+
+
+/* Navbar */
+.navbar {
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+   background: #333;
+   color: #fff;
+   height: 4.375rem;
+   width: 100%;
+   padding: 1.25rem 0.625rem;
+   position: fixed;
+   top: 0;
+   transition: 0.9s;
+}
+
+.navbar.top {
+   background: transparent;
+}
+
+.navbar a {
+   color: #fff;
+   padding: 0.625rem 0.938rem;
+}
+
+.navbar .logo {
+   font-size: 1.5rem;
+   padding: 0.938rem;
+   order: 2;
+   transform: translateX(-50%);
+}
+
+.navbar nav {
+   order: 1;
+}
+
+.navbar nav a {
+   padding: 0.938rem;
+   font-weight: 900;
+   font-size: 0.938rem;
+   transition: all 0.4s ease-in-out;
+}
+
+.navbar nav a:hover {
+   border-bottom: 0.125rem solid #fff;
+}
+
+.navbar ul {
+   display: flex;
+}
+
+.navbar .social {
+   order: 3;
+   display: none;
+   margin-right: 1.25rem;
+}
+
+.navbar .social a {
+   opacity: 0.5;
+   padding: 0 1.25rem;
+   transition: all 0.4s ease-in-out;
+}
+
+.navbar .social a:hover {
+   opacity: 1;
+}
+
+
+ /* text colors */
+.text-primary {
+        color: #3cce96;
+     }
+     
+     .hide
+{
+   display: none;
+}
+.show{
+   display: block;
+}
+    
+    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ROOM</title>
+    
+</head>
+
+<body>
+
+  
+
+    <!-- HEADER -->
+    <header>
+        <div id="navbar" class="navbar top" style="z-index: 2;">
+            <h1 class="logo" >
+               <a href="./index.html">
+                  <span class="text-primary"><i class="fas fa-spa"></i> NAVAIRA</span><span id="h_2">PARADISE</span>
+               </a>
+            </h1>
+            <nav >
+               <ul>
+                <li><a href="./index.html" class="txt">HOME</a></li>
+                <li><a href="./searchPage.html" class="txt">SEARCH</a></li>
+                <li><a href="./About us.html" class="txt">ABOUT</a></li>
+                <li><a href="./kitchen.html" class="txt">KITCHEN</a></li>
+                <li><a href="./roomOverview.html" class="txt">ROOM</a></li>
+             
+               </ul>
+            </nav>
+   
+            <div class="social">
+               <ul id="s_logo">
+                  <li><a href="https://web.facebook.com/evavic44" rel="noreferrer noopener"><img style="transform: translate(0,5px);" height="30" width="30" src="https://static.vecteezy.com/system/resources/previews/027/395/710/original/twitter-brand-new-logo-3-d-with-new-x-shaped-graphic-of-the-world-s-most-popular-social-media-free-png.png" alt="Twitter"></a></li>
+                  <li><a href="https://twitter.com/evavic44" rel="noreferrer noopener"><img height="40" width="40"  src="https://static.vecteezy.com/system/resources/previews/017/221/844/original/telegram-logo-transparent-free-png.png" alt="Telegram"></a></li>
+                  <li><a href="https://www.instagram.com/eke_tech/" rel="noreferrer noopener"><img height="40" width="40"  src="https://cdn.pixabay.com/photo/2020/11/15/06/18/instagram-logo-5744708_1280.png" alt="insta"></a></li>
+                  <li><a href="https://www.linkedin.com/in/victor-eke-2722711a4/" rel="noreferrer noopener"><img style="transform: translate(0,5px);" height="30" width="30"  src="https://tse1.mm.bing.net/th/id/OIP.b5oDvUVU5UVN4cefTJGq3wHaHa?rs=1&pid=ImgDetMain" alt="linked in"></a></li>
+               </ul>
+            </div>
+        </div>
+
+
+        <div id="hero" class="hero">
+            <div class="container">
+                <div class="hero__text-box">
+                    <h1 class="hero__text">
+                        <span class="hero__text-top">NAVAIRA</span>
+                        <span class="hero__text-bottom">PARADISE</span>
+                    </h1>
+                    <a href="./searchPage.html"><button class="btn btn-green">Book a Room</button></a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+
+    <main>
+        <!-- INFO SECTION -->
+        <section class="info section_not_visible">
+            <div class="container">
+                <div class="row">
+                    <div class="col-2 padding-right">
+                        <p class="info-text text-green">Nestled in the heart of opulence, The NAVAIRA PARADISE exudes an aura of refined luxury and timeless elegance. Each room is meticulously crafted to offer a sanctuary of indulgence, where every detail speaks of unparalleled sophistication. As you step into the lavish interiors, you're greeted by a harmonious blend of modern comforts and classic charm, meticulously curated to cater to the most discerning guests.
+
+                            The ambience of The NAVAIRA PARADISE is nothing short of enchanting. From the grandeur of its majestic architecture to the tranquil oasis of its lush gardens, every corner beckons with a promise of serenity and sublime beauty. Whether you're lounging by the azure waters of the pool, surrounded by cascading fountains and verdant foliage, or reveling in the panoramic views of the city skyline from your private balcony, the atmosphere is imbued with an ineffable sense of luxury and tranquility.
+                            
+                            Indulge your senses in the opulent surroundings of The NAVAIRA PARADISE, where every moment is a symphony of sophistication and comfort, leaving you with memories to cherish for a lifetime.</p>
+                        <p class="info-text text-green"></p>
+                    </div>
+                    <div class="col-2 image-group">
+                        <img src="https://www.micato.com/wp-content/uploads/2018/09/exploring-jaipurs-city-palace.jpg
+
+                        " alt="image" width="200" height="385
+                        ">
+                        <img src="https://i.pinimg.com/originals/9f/76/dc/9f76dc0b0c74f0543c1bab88333dacda.jpg" alt="image">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ROOMS SECTION -->
+        <section class="rooms section_not_visible">
+            <div class="container">
+                <div class="row">
+                    <div class="col-2 padding-right">
+                        <img src="https://images.letsgo2.com/LGTImages/Hotels/M0227/RoomImages/P0569/007.jpg" alt="image">
+                    </div>
+                    <div class="col-2">
+                        <div class="text-box">
+                            <h2 class="headline">Rooms</h2>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                                Architecto enim mollitia
+                                dolorum
+                                necessitatibus vero sunt deleniti minus vel, non quasi?</p>
+                            <a href="./searchPage.html"><button class="btn btn-green">Explore Now</button></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- RESTAURANT SECTION -->
+        <section class="restaurant section_not_visible">
+            <div class="container">
+                <div class="row column-reverse">
+                    <div class="col-2 padding-right">
+                        <div class="text-box">
+                            <h2>Restaurant</h2>
+                            <p>The Navaira Paradise Restaurant offers a dining experience that transcends mere culinary delight to become a truly unforgettable journey of taste and luxury. From the moment one steps into its opulent ambiance, adorned with elegant decor and bathed in soft lighting, a sense of grandeur and refinement envelopes the senses. Every dish served is a masterpiece, meticulously crafted by skilled chefs who blend traditional flavors with contemporary techniques, resulting in a symphony of taste that delights even the most discerning palates. The attentive and gracious staff anticipate every need, ensuring that each guest is treated with the utmost care and attention. Whether indulging in the rich flavors of Indian cuisine or savoring international delicacies, dining at the Navaira Paradise Restaurant is an exquisite experience that leaves a lasting impression of culinary excellence and unparalleled hospitality.</p>
+                            <a href="./kitchen.html"><button class="btn btn-white">Dine With Us</button></a>
+                        </div>
+                    </div>
+                    <div class="col-2">
+                        <img src="hote.png" alt="image">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SPA SECTION -->
+        <section class="spa section_not_visible">
+            <div class="container">
+                <div class="row">
+                    <div class="col-2 padding-right">
+                        <img src="https://thestyletraveller.com/wp-content/uploads/2016/10/Spa-Treatment-Room.jpg" alt="image">
+                    </div>
+                    <div class="col-2">
+                        <div class="text-box">
+                            <h2>Spa &amp; Wellness</h2>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                                Architecto enim mollitia
+                                dolorum
+                                necessitatibus vero sunt deleniti minus vel, non quasi?</p>
+                            <a href="./About us.html"><button class="btn btn-green">Learn More</button></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- TESTIMONIAL SECTION -->
+        <section class="testimonials section_not_visible">
+            <div class="container">
+                <h2 class="heading-text">Customers Reviews</h2>
+                <div class="slider">
+                    <div class="slider-box">
+                        <p>The paradise is amazing the ambience and services are worth paying money for</p>
+                        <div class="rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <img src="https://tse3.mm.bing.net/th/id/OIP.XqO6cETFqVBVcTHoDrdybAHaIs?rs=1&pid=ImgDetMain"user">
+                        <h3>Christiana Doe</h3>
+                    </div>
+                    <div class="slider-box">
+                        <i class="fas fa-quote-left text-green"></i>
+                        <p>Navaira Paradise exceeded all my expectations! From the moment I walked in,I was greeted with warmth and elegance.
+                             The ambiance was enchanting, and the service impeccable. 
+                             Every dish I tried was a culinary masterpiece, bursting with flavor and beautifully presented.
+                             Navaira Paradise truly knows how to create an unforgettable dining experience.</p>
+                        <div class="rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <img src="https://tse3.mm.bing.net/th/id/OIP.XqO6cETFqVBVcTHoDrdybAHaIs?rs=1&pid=ImgDetMain" alt="user">
+                        <h3>John Doe</h3>
+                    </div>
+                    <div class="slider-box">
+                        <i class="fas fa-quote-left text-green"></i>
+                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum
+                            has
+                            been the industry's standard dummy text ever.</p>
+                        <div class="rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <img src="images/user-3.jpg" alt="user">
+                        <h3>Jane Doe</h3>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- FOOTER SECTION -->
+    <footer>
+        <div class="container">
+            <div class="back-to-top">
+                <a href="#hero"><i class="fas fa-chevron-up"></i></a>
+            </div>
+            <div class="footer__content row">
+                <div class="col-3">
+                    <h4>About</h4>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam unde accusantium sit repudiandae
+                        incidunt quod eius recusandae blanditiis voluptates consectetur?</p>
+                </div>
+                <div class="col-3">
+                    <h4>Payment Methods</h4>
+                    <p>Pay any way you choose, we support all payment options</p>
+                    <ul class="payment-methods">
+                        <li>
+                            <a href="#">
+                                <i class="fab fa-paypal" aria-hidden="true"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <i class="fab fa-cc-visa" aria-hidden="true"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <i class="fab fa-cc-mastercard" aria-hidden="true"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <i class="fab fa-apple-pay" aria-hidden="true"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-3">
+                    <h4>Get Social</h4>
+                    <p>Follow us on social media and keep in touch with La Hotel.</p>
+                    <ul class="social-icons">
+                        <li>
+                            <a href="https://www.facebook.com/">
+                                <i class="fab fa-facebook-f"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://twitter.com/login">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.instagram.com/?hl=en">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                        </li>
+
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+<script src="./navaira4.js"></script>
+</body>
+
+</html>

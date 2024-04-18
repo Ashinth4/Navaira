@@ -1,0 +1,893 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Page</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+@font-face {
+    font-family: "Herr Von Muellerhoff";
+    src: url("textfont/HerrVonMuellerhoff-Regular.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "Josefin Sans Regular";
+    src: url("textfont/JosefinSans-Regular.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "Josefin Sans Light";
+    src: url("textfont/JosefinSans-Light.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "SourceSansPro Regular";
+    src: url("textfont/SourceSansPro-Regular.ttf") format("truetype");
+}
+
+:root {
+    --main-font-1: "Josefin Sans Regular", sans-serif;
+    --main-font-2: "Josefin Sans Light", sans-serif;
+    --secondary-font: "SourceSansPro Regular", sans-serif;
+    --main-color: #455d58;
+    --white-pinkish-color : #FAF2F7;
+    --white-color: #fff;
+}
+
+
+
+/* Main styling */
+
+
+
+/* BASIC STYLES */
+
+html {
+    color: var(--white-color);
+    
+    font-family: var(--main-font-1);
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--white-pinkish-color);
+    
+}
+
+main img {
+    width: 100%;
+}
+
+section {
+    padding: .5rem 0;
+}
+
+a {
+    text-decoration: none;
+}
+
+p {
+    font-size: 1.2rem;
+    font-family: var(--main-font-2);
+    line-height: 1.5;
+    font-weight: 200;
+}
+
+ul {
+    list-style: none;
+}
+
+h2 {
+    font-size: 2rem;
+    margin: 2rem 0;
+    line-height: 1.3;
+}
+
+h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1.2rem;
+}
+
+h4 {
+    font-size: 1.3rem;
+    font-weight: 700;
+    margin-bottom: 1.6rem;
+}
+
+h2, h4 {
+    text-transform: uppercase;
+    letter-spacing: .2rem;
+}
+
+/* BASIC & REUSABLE CLASSES */
+
+.heading-text {
+    text-align: center;
+    position: relative;
+}
+
+.heading-text::after {
+    content: '';
+    display: block;
+    width: 10rem;
+    height: .2rem;
+    background-color: var(--main-color);
+    margin: 0 auto;
+    margin-top: 3rem;
+}
+
+.text-green {
+    color: var(--main-color);
+}
+
+.text-white {
+    color: var(--white-color);
+}
+
+.container {
+    width: 100%;
+    max-width: 120rem;
+    padding: 0 2.4rem;
+    margin: 0 auto;
+}
+
+.container-medium {
+    max-width: 110rem;
+}
+
+.row {
+    display: flex;
+    align-items: center;
+}
+
+.col-2 {
+    margin-bottom: 5rem;
+    flex-basis: 50%;
+    min-width: 30rem;
+}
+
+.col-3 {
+    flex-basis: 30%;
+    min-width: 25rem;
+    margin-bottom: 5rem;
+}
+
+.padding-right {
+    padding-right: 8rem;
+}
+
+.text-box {
+    width: 100%;
+    max-width: 40rem;
+}
+
+.text-box p {
+    margin: 4rem 0;
+}
+
+/* BUTTONS */
+
+.btn {
+    display: inline-block;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    outline: none;
+    text-transform: uppercase;
+    font-family: inherit;
+    font-size: 1.2rem;
+    font-weight: 400;
+    letter-spacing: .2rem;
+    overflow: hidden;
+    position: relative;
+    
+}
+
+.btn1 {
+    display: inline-block;
+    background: transparent;
+    border: 2px solid black;
+    cursor: pointer;
+    outline: none;
+    text-transform: uppercase;
+    font-family: inherit;
+    font-size: 1.2rem;
+    font-weight: 400;
+    letter-spacing: .2rem;
+    overflow: hidden;
+    position: absolute;
+    width: 200px;
+    height: 50px;
+    left: 68%;
+    top: 20%;
+    
+}
+
+.btn-green1 {
+    color: black;
+    transition: color .5s;
+    z-index: 100;
+}
+
+
+.btn-green1::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -10%;
+    width: 0;
+    height: 100%;
+    transform: skewX(25deg);
+    z-index: -1;
+    transition: width .7s;
+}
+
+.btn-green1::before {
+    background-color: black;
+}
+
+.btn-green1:hover{
+    color: white;
+}
+
+.btn-green1:hover::before {
+    width: 120%;
+}
+
+
+
+ /****************/
+
+.btn-green {
+    color: var(--white-color);
+    transition: color .5s;
+    z-index: 100;
+}
+
+.btn-white {
+    border: 1px solid var(--main-color);
+    color: var(--main-color);
+    transition: color .5s;
+    z-index: 100;
+}
+
+.btn-green::before,
+.btn-white::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -10%;
+    width: 0;
+    height: 100%;
+    transform: skewX(25deg);
+    z-index: -1;
+    transition: width .7s;
+}
+
+.btn-green::before {
+    background-color: var(--white-color);
+}
+
+.btn-white::before {
+    background-color: var(--main-color);
+}
+
+.btn-green:hover{
+    color: var(--main-color);
+}
+
+.btn-white:hover {
+    color: var(--white-color);
+}
+
+.btn-green:hover::before,
+.btn-white:hover::before {
+    width: 120%;
+}
+
+/* HEADER */
+
+
+
+
+
+
+/* Navbar */
+.navbar {
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+   background: #333;
+   color: #fff;
+   height: 4.375rem;
+   width: 100%;
+   padding: 1.25rem 0.625rem;
+   position: fixed;
+   top: 0;
+   transition: 0.9s;
+}
+
+.navbar.top {
+   background: transparent;
+}
+
+.navbar a {
+   color: #fff;
+   padding: 0.625rem 0.938rem;
+}
+
+.navbar .logo {
+   font-size: 1.5rem;
+   padding: 0.938rem;
+   order: 2;
+   transform: translateX(-50%);
+}
+
+.navbar nav {
+   order: 1;
+}
+
+.navbar nav a {
+   padding: 0.938rem;
+   font-weight: 900;
+   font-size: 0.938rem;
+   transition: all 0.4s ease-in-out;
+}
+
+.navbar nav a:hover {
+   border-bottom: 0.125rem solid #fff;
+}
+
+.navbar ul {
+   display: flex;
+}
+
+.navbar .social {
+   order: 3;
+   display: none;
+   margin-right: 1.25rem;
+}
+
+.navbar .social a {
+   opacity: 0.5;
+   padding: 0 1.25rem;
+   transition: all 0.4s ease-in-out;
+}
+
+.navbar .social a:hover {
+   opacity: 1;
+}
+
+
+ /* text colors */
+.text-primary {
+        color: #3cce96;
+     }
+     
+ /* hero */
+    
+.hero {
+    background-image: linear-gradient(to right bottom, rgba(61, 105, 100, 0.662), rgba(32, 98, 85, 0.247)), url("https://the-manpower.com/wp-content/uploads/2020/12/Dubai-scaled.jpg");
+    background-size: cover;
+    background-position: center;
+    height: calc(100vh - 7.5rem);
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+    position: relative;
+}
+
+.hero__text-box {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    
+
+}
+
+.hero__text {
+    text-transform: uppercase;
+    color: var(--white-color);
+    font-size: 1.4rem;
+    letter-spacing: .2rem;
+    line-height: 1.4;
+    margin-bottom: 5rem;
+    border: 1px wheat;
+    border-style: solid;
+    padding: 25px 23px;
+}
+
+.hero__text span {
+    display: block;
+}
+
+/* INFO SECTION */
+
+.info-text {
+    margin-bottom: 3rem;
+    font-family: var(--main-font-2);
+}
+
+.image-group img {
+    width: 100%;
+}
+
+.image-group {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 1.5rem;
+}
+    /* PLACE HOLDER */
+
+.white_placeholder::placeholder{
+    color: rgba(255, 255, 255, 0.705);
+    font-weight: bolder;
+}
+.Black_placeholder::placeholder{
+    color: rgba(0, 0, 0, 0.705);
+    font-weight: bolder;
+}
+
+
+ /* CARDS  */
+.search_results > div{
+    margin: 100px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+ .card {
+    z-index: 1;
+  width: 70%;
+  height: 7%;
+  border-radius: 15px;
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  background-color: rgba(255, 254, 254, 0.1);
+  border: 0px;
+  cursor: pointer;
+  outline: 0px;
+  padding: 0 2px;
+  font-weight: 50;
+  font-size: 20px;
+  color: white;
+  box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+  position: relative;
+  left: 10%;
+ 
+}
+.subCard{
+  z-index: 1;
+  width: 40%;
+  height: 100%;
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  background-color: rgba(255, 254, 254, 0.1);
+  border: 0px;
+  cursor: pointer;
+  outline: 0px;
+  padding: 0 2px;
+  font-weight: 50;
+  font-size: 20px;
+  color: white;
+
+  
+  
+}
+.card_container{
+    display: grid;
+    grid-template-columns: 50% 50%;
+    
+}
+
+
+
+.card_image{
+    padding: 10px 15px;
+}
+
+.card_content{
+    display: grid;
+    grid-template-rows: 150px 150px;
+    color: black;
+    margin-top: 7%;
+}
+
+.card_room_info{
+
+    transform: translate(-80px);
+}
+.card_room_info > ul > li{
+    padding: 10px 15px;
+}
+.card_facilities{
+    border: 2px black;
+    border-style: solid;
+    border-left-width: 0;
+    border-right-width: 0;
+    position: relative;
+    left: -15%;
+    height: 100%;
+    width: 110%;
+    display: grid;
+    grid-template-columns: 50% 50%;
+
+}
+.card_facilities_item{
+    padding: 10px 15px;
+}
+
+  /* SEARCH BAR */
+
+.search_container{
+    display: grid;
+    grid-template-columns: 340px 400px repeat(2, 200px) 150px;
+    border: 2px white;
+    border-style: solid;
+    position: absolute;
+    top: 83%;
+    left: 2%;
+    width: 92%;
+    height: 10%;
+    justify-content:space-evenly;
+    
+}
+.outer_searchbar{
+    border-right: 2px rgb(255, 255, 255);
+    border-bottom-width:0px;
+    border-top-width:0px ;
+    border-left-width:0px ;
+    border-style: solid;
+    background-color: transparent;
+    height: 80%;
+    padding: 10px 20px;
+    transform: translate(0,5px);
+}
+.search_Bar{
+    font-size: larger;
+    width: 90%;
+    height: 100%;
+    border: none;
+    background-color: transparent;
+    outline:none;
+    color: white;
+}
+
+.outer_calender{
+    border-right: 2px rgb(255, 255, 255);
+    border-bottom-width:0px;
+    border-top-width:0px ;
+    border-left-width:0px ;
+    border-style: solid;
+    height: 80%;
+    transform: translate(0,5px);
+    display: flex;
+    flex-direction: row;
+}
+.calender{
+    font-size: larger;
+    width: 40%;
+    height: 100%;
+    border: none;
+    font-size: x-large;
+    background-color: transparent;
+    outline:none;
+    color: white;
+    background-color: transparent;
+}
+.guestNo{
+    background-color: transparent;
+    height: 100%;
+    border: none;
+    outline:none;
+    font-size: larger;
+    color: white;
+   transform: translate(25px);
+}
+.outer_last{
+   
+    border-right: 2px rgb(255, 255, 255);
+    border-bottom-width:0px;
+    border-top-width:0px ;
+    border-left-width:0px ;
+    border-style: solid;
+    height: 100%;
+   
+    display: flex;
+    flex-direction: row;
+}
+
+.search_btn{
+    width: 118%;
+    left: -13px;
+}
+
+
+/* FILTER SEARCH */
+
+.filter_search_container{
+    display: grid;
+    grid-template-columns: repeat(4,200px);
+    width: 80%;
+    height: 50px;
+    position: relative;
+    left: 5%;
+    justify-items: center;
+    justify-content: space-evenly;
+    background-color: transparent;
+}
+.outer{
+    border-top-width:0 ;
+    border-left-width:0 ;
+    border-right-width:0 ;
+    border-bottom: 2px black ;
+    border-style:solid ;
+    padding: 5px 7px;
+    
+}
+.floorNo{
+    border: none;
+    outline: none;
+    height: 90%;
+    width: 100%;
+    font-size: large;
+    background-color: transparent;
+    transform: translate(30px);
+}
+.room_type{
+    height:90% ;
+    border: none;
+    outline: none;
+    background-color: transparent;
+    font-size: large;
+}
+
+
+
+/* Footer */
+.footer {
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content: center;
+   text-align: center;
+   transform: translate(0,0);
+   padding: 1.875rem;
+}
+
+.socials a {
+   font-size: 1.25rem;
+   color: #fff;
+   padding: 0.5rem 0.625rem;
+}
+
+.socials a:hover {
+   color: #14af74;
+}
+
+.bg-dark {
+   background: #333;
+   color: #fff;
+   
+}
+
+
+  /* JS CSS */
+    
+  .section_not_visible{
+    opacity: 0;
+    transform: translateY(50px);
+    transition: 1s ease;
+    }
+    .section_visible 
+    {
+    opacity: 1 ;
+    transform: translateY(0px);
+    }
+
+    .hide
+{
+   display: none;
+}
+.show{
+   display: block;
+}
+    </style>
+</head>
+<body>
+        <!-- MENU BAR -->
+        <header>
+            <div id="navbar" class="navbar top" style="z-index: 2;">
+                <h1 class="logo" >
+                   <a href="./index.html">
+                      <span class="text-primary"><i class="fas fa-spa"></i> NAVAIRA</span><span id="h_2">PARADISE</span>
+                   </a>
+                </h1>
+                <nav >
+                   <ul>
+                    <li><a href="./index.html" class="txt">HOME</a></li>
+                    <li><a href="./searchPage.html" class="txt">SEARCH</a></li>
+                    <li><a href="./About us.html" class="txt">ABOUT</a></li>
+                    <li><a href="./kitchen.html" class="txt">KITCHEN</a></li>
+                    <li><a href="./roomOverview.html" class="txt">ROOM</a></li>
+                    <li><a href="./Contacts.html" class="txt">CONTACT</a></li>
+             
+                   </ul>
+                </nav>
+       
+                <div class="social">
+                   <ul id="s_logo">
+                      <li><a href="https://web.facebook.com/evavic44" rel="noreferrer noopener"><img style="transform: translate(0,5px);" height="30" width="30" src="https://static.vecteezy.com/system/resources/previews/027/395/710/original/twitter-brand-new-logo-3-d-with-new-x-shaped-graphic-of-the-world-s-most-popular-social-media-free-png.png" alt="Twitter"></a></li>
+                      <li><a href="https://twitter.com/evavic44" rel="noreferrer noopener"><img height="40" width="40"  src="https://static.vecteezy.com/system/resources/previews/017/221/844/original/telegram-logo-transparent-free-png.png" alt="Telegram"></a></li>
+                      <li><a href="https://www.instagram.com/eke_tech/" rel="noreferrer noopener"><img height="40" width="40"  src="https://cdn.pixabay.com/photo/2020/11/15/06/18/instagram-logo-5744708_1280.png" alt="insta"></a></li>
+                      <li><a href="https://www.linkedin.com/in/victor-eke-2722711a4/" rel="noreferrer noopener"><img style="transform: translate(0,5px);" height="30" width="30"  src="https://tse1.mm.bing.net/th/id/OIP.b5oDvUVU5UVN4cefTJGq3wHaHa?rs=1&pid=ImgDetMain" alt="linked in"></a></li>
+                   </ul>
+                </div>
+            </div>
+    
+
+            <div id="hero" class="hero">
+                <div class="container">
+                    <div class="search_container">
+                        
+                            <div class="outer_searchbar"> <input placeholder="Find a Hotel or Destination" class="search_Bar white_placeholder" type="search"> </div>
+                            <div class="outer_calender">
+                                <input class="calender" type="date" name="" id="">
+                                 <span style="padding: 15px 25px;">to</span>
+                                <input class="calender" type="date" name="" id="">
+                            </div>
+                            <div class="outer_calender" ><input placeholder="Total Guest" class="guestNo white_placeholder" type="text"></div>
+                            <div class="outer_last" ><input placeholder="Total Room" class="guestNo white_placeholder" type="text"></div>
+                            <button class="search_btn btn btn-green">Search</button>
+                    </div>
+            </div>
+        </header>
+
+            <!--  FILTER SEARCH -->
+            <section>
+
+                <div class="filter_search_container">
+                    <div class="outer">  <input placeholder="Floor Number" class="floorNo Black_placeholder" type="text"> </div>
+                    <div class="outer" > 
+                        <select class="room_type" >
+                            <option disabled selected value="1">Facilities</option>
+                            <option  value="2">Pet Friendly</option>
+                            <option value="3">Gaming</option>
+                            <option value="4">Lake side</option>
+                            <option value="">Kids Friendly</option>
+                            <option value="">Party</option>
+                        </select>
+                    </div>
+                    <div class="outer"> 
+                        <select class="room_type">
+                            <option disabled selected value="1">Room Type</option>
+                            <option value="">Premium Room</option>
+                            <option value="">Deluxe Room</option>
+                            <option value="">Standard Room</option>
+                            <option value="">king Room</option>
+                        </select>
+                    </div>
+                    <div class="outer" style="width: 120%;">
+                        <i class="fa fa-search" style="position: absolute;left: 75.5%;top: 22%;color:  rgba(0, 0, 0, 0.705);font-size: x-large;" aria-hidden="true"></i>
+                        <input class="floorNo Black_placeholder" placeholder="Refine Your Search" type="search">
+
+                    </div>
+
+                </div>
+
+            </section>
+
+                <!-- SEARCH RESULTS -->
+            
+                <section class="search_results">
+                    <h3 class="section_not_visible" style="color: black; transform: translate(30px,20px); width: 80%;">23 Results Found:</h3>
+                    <!-- RESULT 1 -->
+
+                    <div class="card section_not_visible">
+                        <div class="card_container">
+                            <div><img class="card_image" src="./hote.png" height="370" width="400" alt=""></div>
+                            <div class="card_content">
+                                <div class="card_room_info">
+                                    <button class="btn1 btn-green1" >Book Now</button>
+                                   <ul>
+                                    <li>Room Type: Premium room</li>
+                                    <li>Price: $3,000 per Night</li>
+                                    <li>Floor Number:  1</li>
+                                   </ul>
+                                </div>
+                                <div class="card_facilities">
+                                    <div class="card_facilities_item"><img src="./img/coffee-machine.png" alt="location_logo" height="30" width="30" > Tea/coffee maker </div>
+                                    <div class="card_facilities_item"><img src="./img/hotel-service.png" alt="location_logo" height="30" width="30" > Room service</div>
+                                    <div class="card_facilities_item"><img src="./img/restaurant.png" alt="location_logo" height="30" width="30" > Best Dining</div>
+                                    <div class="card_facilities_item"><img src="./img/breakfast.png" alt="location_logo" height="30" width="30" > Fabulous breakfast</div>
+
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+
+                     <!-- RESULT 2 -->
+
+                     <div class="card section_not_visible">
+                        <div class="card_container">
+                            <div><img class="card_image" src="./hote.png" height="370" width="400" alt=""></div>
+                            <div class="card_content">
+                                <div class="card_room_info">
+                                    <button class="btn1 btn-green1" >Book Now</button>
+                                   <ul>
+                                    <li>Room Type: Premium room</li>
+                                    <li>Price: $3,000 per Night</li>
+                                    <li>Floor Number:  1</li>
+                                   </ul>
+                                </div>
+                                <div class="card_facilities">
+                                    <div class="card_facilities_item"><img src="./img/coffee-machine.png" alt="location_logo" height="30" width="30" > Tea/coffee maker </div>
+                                    <div class="card_facilities_item"><img src="./img/hotel-service.png" alt="location_logo" height="30" width="30" > Room service</div>
+                                    <div class="card_facilities_item"><img src="./img/restaurant.png" alt="location_logo" height="30" width="30" > Best Dining</div>
+                                    <div class="card_facilities_item"><img src="./img/breakfast.png" alt="location_logo" height="30" width="30" > Fabulous breakfast</div>
+
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                     <!-- RESULT 1 -->
+
+                     <div class="card section_not_visible">
+                        <div class="card_container">
+                            <div><img class="card_image" src="./hote.png" height="370" width="400" alt=""></div>
+                            <div class="card_content">
+                                <div class="card_room_info">
+                                    <button class="btn1 btn-green1" >Book Now</button>
+                                   <ul>
+                                    <li>Room Type: Premium room</li>
+                                    <li>Price: $3,000 per Night</li>
+                                    <li>Floor Number:  1</li>
+                                   </ul>
+                                </div>
+                                <div class="card_facilities">
+                                    <div class="card_facilities_item"><img src="./img/coffee-machine.png" alt="location_logo" height="30" width="30" > Tea/coffee maker </div>
+                                    <div class="card_facilities_item"><img src="./img/hotel-service.png" alt="location_logo" height="30" width="30" > Room service</div>
+                                    <div class="card_facilities_item"><img src="./img/restaurant.png" alt="location_logo" height="30" width="30" > Best Dining</div>
+                                    <div class="card_facilities_item"><img src="./img/breakfast.png" alt="location_logo" height="30" width="30" > Fabulous breakfast</div>
+
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                </section>
+
+                
+        <script src="./navaira4.js"></script>
+</body>
+
+
+<footer id="footer" class="footer bg-dark">
+    <div class="socials">
+       <a href="https://web.facebook.com/evavic44" rel="noreferrer noopener"><i class="fab fa-facebook"></i></a>
+       <a href="https://twitter.com/evavic44" rel="noreferrer noopener"><i class="fab fa-twitter"></i></a>
+       <a href="https://www.youtube.com/channel/UC1ZFB6oOjVe24G6Z4EjwA8w?view_as=subscriber" rel="noreferrer noopener"><i
+             class="fab fa-youtube"></i></a>
+       <a href="https://www.linkedin.com/in/victor-eke-2722711a4/" rel="noreferrer noopener"><i class="fab fa-linkedin"></i></a>
+    </div>
+    <p>Copyright &copy; 2020 &nbsp; | &nbsp; <a href='/thankyou'><i class="fas fa-spa text-primary"></i></a> Navaira Paradise
+    </p>
+ </footer>
+</html>

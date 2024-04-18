@@ -1,0 +1,436 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <!-- Meta -->
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <meta name="keywords" content="Navaira, Best hotel in India,Where Dreams Meet Reality, Navaira Paradise Awaits!">
+   <meta name="description" content="Navaira Paradise is the most luxurious Hotel in Japan">
+   <meta http-equiv="X-UA compatible" content="ie=edge">
+
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+   
+   
+   <title>NV</title>
+
+   <!-- Favicon --> 
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+   <link rel="apple-touch-icon" sizes="180x180" href="./img/favicon/apple-touch-icon.png">
+   <link rel="icon" type="image/png" sizes="32x32" href="./img/favicon/favicon-32x32.png">
+   <link rel="icon" type="image/png" sizes="16x16" href="./img/favicon/favicon-16x16.png">
+   <link rel="icon" sizes="192x192" href="./img/favicon/android-chrome-192x192.png">
+   <link rel="icon" sizes="512x512" href="./img/favicon/android-chrome-512x512.png">
+   <link rel="manifest" href="img/favicon/site.webmanifest">
+
+
+      <!-- HOME PAGE CSS -->
+      <link rel="stylesheet" href="./HomePage.css">
+
+
+      <!--  ROOM1 PAGE CSS -->
+      <link rel="stylesheet" href="./HomePage.css">
+      <style>
+         
+form{
+    height: 520px;
+    width: 400px;
+    background-color: rgba(0, 0, 0, 0.511);
+    position: absolute;
+    transform: translate(-50%,-50%);
+    top: 50%;
+    left: 50%;
+    border-radius: 10px;
+    backdrop-filter: blur(10px);
+    border: 2px solid rgba(255,255,255,0.1);
+    box-shadow: 0 0 40px rgba(8,7,16,0.6);
+    padding: 50px 35px;
+}
+form *{
+    font-family: 'Poppins',sans-serif;
+    color: #ffffff;
+    letter-spacing: 0.5px;
+    outline: none;
+    border: none;
+}
+form h3{
+    font-size: 32px;
+    font-weight: 500;
+    line-height: 42px;
+    text-align: center;
+}
+
+label{
+    display: block;
+    margin-top: 30px;
+    font-size: 16px;
+    font-weight: 500;
+}
+input{
+    display: block;
+    height: 50px;
+    width: 100%;
+    background-color: rgba(255,255,255,0.07);
+    border-radius: 3px;
+    padding: 0 10px;
+    margin-top: 8px;
+    font-size: 14px;
+    font-weight: 300;
+}
+::placeholder{
+    color: #e5e5e5;
+}
+button{
+    margin-top: 50px;
+    width: 100%;
+    background-color: #ffffff;
+    color: #080710;
+    padding: 15px 0;
+    font-size: 18px;
+    font-weight: 600;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.social{
+  margin-top: 30px;
+  display: flex;
+}
+.social div{
+  background: red;
+  width: 150px;
+  border-radius: 3px;
+  padding: 5px 10px 10px 5px;
+  background-color: rgba(255,255,255,0.27);
+  color: #eaf0fb;
+  text-align: center;
+}
+.social div:hover{
+  background-color: rgba(0, 0, 0, 0.562);
+}
+.social .fb{
+  margin-left: 25px;
+}
+.social i{
+  margin-right: 4px;
+}
+.hide
+{
+   display: none;
+}
+.show{
+   display: block;
+}
+
+      </style>
+      
+<title>hiii</title>
+</head>
+
+<body id="home">
+
+
+     
+
+      <!-- LOGIN PAGE -->
+
+      <form id="login" class="hide" style="z-index: 20;">
+         <h3>Login Here</h3>
+ 
+         <label for="username">Username</label>
+         <input type="text" placeholder="Email or Phone" id="username">
+ 
+         <label for="password">Password</label>
+         <input type="password" placeholder="Password" id="password">
+ 
+         <button onclick="_hide()">Log In</button>
+         <div class="social">
+           <div class="go"><i class="fab fa-google"></i>  Google</div>
+           <div class="fb"><i class="fab fa-facebook"></i>  Facebook</div>
+         </div>
+     </form>
+
+     <form id="sigin" class="hide" style="z-index: 20;height: 100%;">
+      <h3>Login Here</h3>
+
+      <label for="username">Username</label>
+      <input type="text" placeholder="Name" id="username">
+
+      <label for="Email">Email</label>
+      <input type="text" placeholder="Email" id="Email">
+
+      <label for="Phone">Phone</label>
+      <input type="text" placeholder="Phone" id="Phone">
+
+      <label for="password">Password</label>
+      <input type="password" placeholder="Password" id="password">
+
+      <button onclick="_hide1()">Sign In</button>
+      <div class="social">
+        <div class="go"><i class="fab fa-google"></i>  Google</div>
+        <div class="fb"><i class="fab fa-facebook"></i>  Facebook</div>
+      </div>
+  </form>
+    
+      <!-- HOME PAGE -->
+         <header class="hero">
+            <div id="navbar" class="navbar top">
+               <h1 class="logo">
+                  <a href="Contacts.html">
+                     <span class="text-primary"><i class="fa-solid fa-spa"></i> NAVAIRA</span><span id="h_2">PARADISE</span>
+                  </a>
+               </h1>
+               <nav>
+                  <ul>
+                     <li><a href="./searchPage.html" class="txt">SEARCH</a></li>
+                     <li><a href="./About us.html" class="txt">ABOUT</a></li>
+                     <li><a href="./kitchen.html" class="txt">KITCHEN</a></li>
+                     <li><a href="./roomOverview.html" class="txt">ROOM</a></li>
+                     <li><a href="./Contacts.html" class="txt">CONTACT</a></li>
+                     <li><a class="txt" href="#" onclick="_show()">LOGIN</a></li>
+                     <li><a class="txt" href="#" onclick="_show1()">SIGNIN</a></li>
+                     
+                  </ul>
+               </nav>
+      
+               <div class="social">
+                  <ul id="s_logo">
+                     <li><a href="https://web.facebook.com/evavic44" rel="noreferrer noopener"><img style="transform: translate(0,5px);" height="30" width="30" src="https://static.vecteezy.com/system/resources/previews/027/395/710/original/twitter-brand-new-logo-3-d-with-new-x-shaped-graphic-of-the-world-s-most-popular-social-media-free-png.png" alt="Twitter"></a></li>
+                     <li><a href="https://twitter.com/evavic44" rel="noreferrer noopener"><img height="40" width="40"  src="https://static.vecteezy.com/system/resources/previews/017/221/844/original/telegram-logo-transparent-free-png.png" alt="Telegram"></a></li>
+                     <li><a href="https://www.instagram.com/eke_tech/" rel="noreferrer noopener"><img height="40" width="40"  src="https://cdn.pixabay.com/photo/2020/11/15/06/18/instagram-logo-5744708_1280.png" alt="insta"></a></li>
+                     <li><a href="https://www.linkedin.com/in/victor-eke-2722711a4/" rel="noreferrer noopener"><img style="transform: translate(0,5px);" height="30" width="30"  src="https://tse1.mm.bing.net/th/id/OIP.b5oDvUVU5UVN4cefTJGq3wHaHa?rs=1&pid=ImgDetMain" alt="linked in"></a></li>
+                  </ul>
+               </div>
+           </div>
+      
+            <div class="content">
+               <h1>Enjoy Your Stay</h1>
+               <p>Where Dreams Meet Reality, Navaira Paradise Awaits!</p>
+               <a class='btn btn-primary' href='./About us.html'>
+                  <i class="fas fa-chevron-right"></i> Read More
+               </a>
+            </div>
+         </header>
+      
+         
+         <!-- About: icons-->
+         <div class="main-container section_not_visible" >
+            <section id="about" class="icons">
+               <div class="flex-items">
+                  <div>
+                     <i class="fas fa-utensils fa-2x"></i>
+                     <div>
+                        <h3>Great Meals</h3>
+                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Delectus, autem?</p>
+                     </div>
+                  </div>
+      
+                  <div>
+                     <i class="fas fa-hotel fa-2x"></i>
+                     <div>
+                        <h3>Great Location</h3>
+                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Delectus, autem?</p>
+                     </div>
+                  </div>
+      
+                  <div>
+                     <i class="fas fa-dumbbell fa-2x"></i>
+                     <div>
+                        <h3>Fitness Room</h3>
+                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Delectus, autem?</p>
+                     </div>
+                  </div>
+               </div>
+            </section>
+         </div>
+         <!-- About: history -->
+         <section class="flex-columns history section_not_visible" >
+            <div class="row">
+               <div class="column">
+                  <div class="column-1"style="float:left;">
+                     <img src="dubi.gif" alt=""style="height: 400px;width: 700px; float: left;">
+                  </div>
+               </div>
+      
+               <div class="column"style="width:750px; height:400px;">
+                  <div class="column-2 bg-light">
+                     <h4 class="text-secondary">About Us</h4>
+                     <h2>A Brief History Of Navaira Paradise</h2>
+                     <p>
+                        Navaira Paradise, founded by <span class="text-secondary"><strong>'Niharika Maharana'</strong></span> and the
+                        <strong>'Uchiha'</strong> clan 50 years ago. These families have been in the hospitality industry ever
+                        since. Although it has undergone quite a bit of modernization and upkeep over the years, the main
+                        attraction, namely the Hokage molded statue and gorgeous hidden leaf village tress have remained the
+                        center for it's appeal.
+                     </p>
+                     <a class='btn btn-primary' href='/about'><i class="fas fa-chevron-right"></i> Learn More</a>
+                  </div>
+               </div>
+            </div>
+         </section>
+      
+         <!-- Food -->
+         <section id="kitchen" class=" food flex-grid section_not_visible">
+            <header class="secondary-header">
+               <h4 class="text-secondary">What would you like us to prepare for you?</h4>
+               <h2>KITCHEN</h2>
+               <p>"Savor the Flavor, Feed the Soul."</p>
+            </header>
+            <div class="row">
+               <div class="column">
+                  <a href="./kitchen.html" data-lightbox="food" data-title="Onigiri, also known as Japanese rice ball is a great example of how inventive Japanese cuisine
+                  can be. It is also a Japanese comfort food made from steamed rice formed into the typical
+                  triangular ball, or cylinder shapes and usually wrapped with Nori(dried seaweed).
+                  ">
+                     <img  src="https://d33wubrfki0l68.cloudfront.net/bc7606427cd20dc26204bb044d10993eda785014/ba3ec/img/food/food-1.jpg" alt="">
+                  </a>
+      
+                  <a href="./kitchen.html" data-lightbox="food" data-title="Curry Rice
+                  The curry was introduced to Japan in late 1800 by the British and originally it was Western style stews mixed with curry powder. The Japanese adapted curry to their own version, Curry
+                  Rice (Kare Raisu, カレーライス) soon after. By 1950s the curry roux in block form was sold by
+                  S&B Foods and everyone could make it easily at home.">
+                     <img src="https://d33wubrfki0l68.cloudfront.net/78b6120b93ddef901b5c45089129585cc72a7a5b/65d2a/img/food/food-2.jpg" alt="">
+                  </a>
+               </div>
+      
+               <div class="column">
+                  <a href="./kitchen.html" data-lightbox="food" data-title="Miso soup
+                  Miso soup is a traditional Japanese soup consisting of a dashi stock into which softened miso
+                  Paste is mixed. In addition, there are many optional ingredients that may be added depending
+                  On regional and seasonal recipes, and personal preference.">
+                     <img src="https://d33wubrfki0l68.cloudfront.net/37cc842f5376c2633edb04e06201dbcedeaa3841/0d16b/img/food/food-3.jpg" alt="">
+                  </a>
+      
+                  <a href="./kitchen.html" data-lightbox="food" data-title="Ebi tempura bento
+                  Tempura is, in many ways, an archetypal Japanese food. All the essential qualities of the
+                  nation's cuisine are reflected in its preparation: the use of absolutely fresh ingredients, the
+                  artful presentation,and the perfection of technique by a skilled chef. The result is one of the
+                  triumphs of Japanese cooking-a fried food that is light and fresh-tasting rather than heavy
+                  and greasy.">
+                     <img src="https://d33wubrfki0l68.cloudfront.net/36dd9035a64c10bc85db66650946823e500163f2/5243e/img/food/food-4.jpg" alt="">
+                  </a>
+               </div>
+      
+               <div class="column">
+                  <a href="./kitchen.html" data-lightbox="food" data-title="Japanese Sushi is a traditional Japanese dish of prepared vinegared rice, usually with some sugar and
+                  salt,accompanying a variety of ingredients,such as seafood,often raw,and vegetables. Styles
+                  of sushi and it's presentation vary widely,but the one key ingredient is sushi rice, also
+                  referred to asshari, orsumeshi.">
+                     <img src="https://d33wubrfki0l68.cloudfront.net/bffba6e837709e877ad11f1aeea61b8e57e9eb19/702b7/img/food/food-5.jpg" alt="">
+                  </a>
+      
+                  <a href="./kitchen.html" data-lightbox="food" data-title="Rice sushi
+                  In Japan, we call sushi rice Sushi-meshi鮨飯, Su-meshi(酢飯), orshari(シャリ).It’s made  of
+                  white, short-grain Japanese rice seasoned with rice vinegar, sugar,and salt. Brown rice is
+                  sometimes used outside of Japan, but it’s not common in sushi restaurants in Japan.
+                  ">
+                     <img src="https://d33wubrfki0l68.cloudfront.net/9ddf2695ed1b431a4dda2a2d64de4a8bfc3baa6e/29ec9/img/food/food-6.jpg" alt="">
+                  </a>
+               </div>
+      
+               <div class="column">
+                  <a href="./kitchen.html" data-lightbox="food" data-title="Ramen. 
+                   After World War II, ramen became internationally recognized when Japan increased their imports of U.S. 
+                  wheat, contributing to Japan's ramen industry and growth. There are three common types of broths in the 
+                  Japanese ramen: Tonkotsu, Shoyu, and Miso.">
+                     <img src="https://d33wubrfki0l68.cloudfront.net/7695e2735257c2a83470cf40db7e4b36cad30ec0/0212b/img/food/food-7.jpg" alt="">
+                  </a>
+      
+                  <a href="./kitchen.html" data-lightbox="food" data-title="Nigiri   
+                  Nigiri ornigiri zushi is a special kind of hand-pressed sushi where the meat is sliced and
+                  pressed on top of sushi rice. It was developed in Tokyo(then called Edo)during the 1800s.
+                  Sometimes, nori seaweed is used to wrap the whole concoction and keep it together.
+                  ">
+                     <img src="https://d33wubrfki0l68.cloudfront.net/7384d74d3194d95c4b1b0a299511a08800eab74f/05980/img/food/food-8.jpg" alt="">
+                  </a>
+               </div>
+            </div>
+         </section>
+      
+         <!-- Rooms -->
+         <section id="rooms" class="rooms section_not_visible" >
+            <header class="secondary-header">
+               <h4 class="text-secondary">Book your accomodations now!</h4>
+               <h2>Rooms</h2>
+              
+            </header>
+            <div class="room" style="width: 80%;">
+               <div>
+                  <img src="https://images.letsgo2.com/LGTImages/Hotels/M0227/RoomImages/P0569/007.jpg" alt=""style="width:320px; height: 250px;">
+                  <div class="list">
+                     <h3>Standard Room</h3>
+                     <ul>
+                        <li>Standard condition</li>
+                        <li>Single Size</li>
+                        <li>Room service</li>
+                     </ul>
+                     <a href="./room1.html" class="btn btn-outline">Book Now</a>
+                  </div>
+               </div>
+      
+               <div>
+                  <img src="https://tse3.mm.bing.net/th/id/OIP.3O744QXLULVYz-sVSo0D5QHaFj?rs=1&pid=ImgDetMain" alt=""style="width:320px; height: 250px;">
+                  <div class="list">
+                     <h3>Premium Room</h3>
+                     <ul>
+                        <li>Premium Room</li>
+                        <li>Double Size</li>
+                        <li>Room service</li>
+                     </ul>
+                     <a href="./room1.html" class="btn btn-outline">Book Now</a>
+                  </div>
+               </div>
+      
+               <div>
+                  <img  src="https://tse1.mm.bing.net/th/id/OIP.byAGOgHmpIsojwKJUOhi6gHaE0?rs=1&pid=ImgDetMain" alt=""style="width:320px; height: 250px;">
+                  <div class="list">
+                     <h3>Deluxe Room</h3>
+                     <ul>
+                        <li>Deluxe Room</li>
+                        <li>Deluxe Size</li>
+                        <li>Room service</li>
+                     </ul>
+                     <a href="./room1.html" class="btn btn-outline">Book Now</a>
+                  </div>
+               </div>
+               <div>
+                  <img src="https://www1.lovethatdesign.com/wp-content/uploads/2022/10/Love-That-Design-Palace-Beach-Resort-Fujairah-04-338x225.jpg" alt=""style="width:320px; height: 250px;">
+                  <div class="list">
+                     <h3>King Room</h3>
+                     <ul>
+                        <li>king Room</li>
+                        <li>King Size</li>
+                        <li>Room service</li>
+                     </ul>
+                     <a href="./room1.html" class="btn btn-outline">Book Now</a>
+                  </div>
+               </div>
+            </div>
+         </section>
+      
+         <script src="./navaira.js" ></script>
+
+    <script>
+
+     
+    </script>
+
+
+
+
+</body>
+
+<footer id="footer" class="footer bg-dark">
+   <div class="socials">
+      <a href="https://web.facebook.com/evavic44" rel="noreferrer noopener"><i class="fab fa-facebook"></i></a>
+      <a href="https://twitter.com/evavic44" rel="noreferrer noopener"><i class="fab fa-twitter"></i></a>
+      <a href="https://www.youtube.com/channel/UC1ZFB6oOjVe24G6Z4EjwA8w?view_as=subscriber" rel="noreferrer noopener"><i
+            class="fab fa-youtube"></i></a>
+      <a href="https://www.linkedin.com/in/victor-eke-2722711a4/" rel="noreferrer noopener"><i class="fab fa-linkedin"></i></a>
+   </div>
+   <p>Copyright &copy; 2020 &nbsp; | &nbsp; <a href='/thankyou'><i class="fas fa-spa text-primary"></i></a> Navaira Paradise
+   </p>
+</footer>
+</html>
+
